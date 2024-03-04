@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
-function App() {
+
+function app() {
+  const [tasks, setTasks] = useState([
+    {id: Math.random(), description:"redux", isDone: false},
+    {id: Math.random(), description:"Lunch", isDone: false},
+  ])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>todo list with redux</h1>
+      <Addtask/>
+      <ListTask tasks={tasks}/>
     </div>
   );
 }
-
-export default App;
